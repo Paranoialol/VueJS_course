@@ -22,8 +22,21 @@
 		</div>
 		<!-- preloader -->
 		<div id="app">
-			<h1 class="h1">Hello {{ name }}</h1>
 
+
+			<table class="people_table" border="1" summary="users massive" align="center">
+
+				<caption><b>Задание №1 курса по vue.js</b</caption> <tr v-for="person of people">
+						<td align="center">{{	person.name	}}</td>
+						<td align="center">{{	person.middleName	}}</td>
+						<td align="center">{{	person.surname	}}</td>
+						<td align="center">
+							<img v-bind:src="person.avatarImg" alt="Аватар отсутствует" height="50px">
+						</td>
+						</tr>
+
+
+			</table>
 
 
 
@@ -34,10 +47,48 @@
 	<script>
 		new Vue({
 			el: '#app',
-			data: {
-				name: 'VueJS'
+			data: function () {
+				return {
+					people: [{
+							name: 'Алексей',
+							surname: 'Абрашкин',
+							middleName: 'Александрович',
+							avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
+						},
+						{
+							name: 'Борис',
+							surname: 'Гребеншиков',
+							middleName: 'Валерьевич',
+							avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
+						},
+						{
+							name: 'Валерий',
+							surname: 'Волков',
+							middleName: 'Владимирович',
+							avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
+						},
+						{
+							name: 'Григорий',
+							surname: 'Гришин',
+							middleName: 'Геннадиевич',
+							avatarImg: ''
+						},
+						{
+							name: 'Дмитрий',
+							surname: 'Деревянко',
+							middleName: 'Денисович',
+							avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
+						},
+					],
+				}
+			},
+			methods: {
+
+
+
 			}
-		})
+
+		});
 	</script>
 </body>
 
