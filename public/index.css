@@ -133,6 +133,7 @@
 table td {
 	border: 1px solid lime;
 	text-align: center;
+	height: 50px;
 }
 
 button {
@@ -145,9 +146,7 @@ margin: auto;
 	display: none;
 }
 
-.default {
-	height: 50px;
-}
+
 
 
 
