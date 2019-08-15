@@ -22,6 +22,7 @@
 	-o-transition: var(--duration) all;
 	visibility: visible;
 	opacity: 1;
+
 }
 
 .done {
@@ -122,10 +123,11 @@
 	padding: 0;
 }
 
+
 .table_wrapper {
 	width: fit-content;
 	margin: auto;
-	padding-top: 50px;
+	margin-top: 50px;
 }
 
 table td {
@@ -133,10 +135,19 @@ table td {
 	text-align: center;
 }
 
-.hide_button {
-	margin-top: 20px;
+button {
+display: flex;
+margin: auto;
+
 }
 
 [v-cloak] {
 	display: none;
 }
+
+.default {
+	height: 50px;
+}
+
+
+
