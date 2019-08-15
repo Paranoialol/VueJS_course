@@ -24,9 +24,12 @@
 		<div id="app">
 
 
-			<table class="people_table" border="1" summary="users massive" align="center">
+			<table border="1" summary="people massive" align="center">
 
-				<caption><b>Задание №1 курса по vue.js</b</caption> <tr v-for="person of people">
+				<caption>
+						<h1 class="h1">Задание №1 курса по vue.js</h1>
+				</caption>
+				<tr v-for="person of people">
 						<td align="center">{{	person.name	}}</td>
 						<td align="center">{{	person.middleName	}}</td>
 						<td align="center">{{	person.surname	}}</td>
