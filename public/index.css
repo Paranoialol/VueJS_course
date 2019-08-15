@@ -121,3 +121,22 @@
 	margin: 0;
 	padding: 0;
 }
+
+.table_wrapper {
+	width: fit-content;
+	margin: auto;
+	padding-top: 50px;
+}
+
+table td {
+	border: 1px solid lime;
+	text-align: center;
+}
+
+.hide_button {
+	margin-top: 20px;
+}
+
+[v-cloak] {
+	display: none;
+}

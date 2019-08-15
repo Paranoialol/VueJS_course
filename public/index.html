@@ -21,26 +21,31 @@
 			</div>
 		</div>
 		<!-- preloader -->
-		<div id="app">
+		<div id="app" v-cloak>
 
+			<div class="table_wrapper">
+				<button class="hide_button">Скрыть таблицу</button>
+				<table v-if="show" summary="people massive">
 
-			<table border="1" summary="people massive" align="center">
-
-				<caption>
+					<caption>
 						<h1 class="h1">Задание №1 курса по vue.js</h1>
-				</caption>
-				<tr v-for="person of people">
-						<td align="center">{{	person.name	}}</td>
-						<td align="center">{{	person.middleName	}}</td>
-						<td align="center">{{	person.surname	}}</td>
-						<td align="center">
+					</caption>
+					<tr>
+						<td>
+							<h2 class="h2">Всего пользователей : {{count}}</h2>
+						</td>
+					</tr>
+					<tr v-for="person of people">
+						<td>{{	person.name	}}</td>
+						<td>{{	person.middleName	}}</td>
+						<td>{{	person.surname	}}</td>
+						<td>
 							<img v-bind:src="person.avatarImg" alt="Аватар отсутствует" height="50px">
 						</td>
-						</tr>
-
-
-			</table>
-
+					</tr>
+				</table>
+				
+			</div>
 
 
 		</div>
@@ -52,45 +57,43 @@
 			el: '#app',
 			data: function () {
 				return {
-					people: [{
-							name: 'Алексей',
-							surname: 'Абрашкин',
-							middleName: 'Александрович',
-							avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
-						},
-						{
-							name: 'Борис',
-							surname: 'Гребеншиков',
-							middleName: 'Валерьевич',
-							avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
-						},
-						{
-							name: 'Валерий',
-							surname: 'Волков',
-							middleName: 'Владимирович',
-							avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
-						},
-						{
-							name: 'Григорий',
-							surname: 'Гришин',
-							middleName: 'Геннадиевич',
-							avatarImg: ''
-						},
-						{
-							name: 'Дмитрий',
-							surname: 'Деревянко',
-							middleName: 'Денисович',
-							avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
-						},
-					],
+					people: [],
+					show: true,
 				}
 			},
-			methods: {
-
-
-
-			}
-
+			mounted: function () {
+				this.people = [{
+						name: 'Алексей',
+						surname: 'Абрашкин',
+						middleName: 'Александрович',
+						avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
+					},
+					{
+						name: 'Борис',
+						surname: 'Гребеншиков',
+						middleName: 'Валерьевич',
+						avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
+					},
+					{
+						name: 'Валерий',
+						surname: 'Волков',
+						middleName: 'Владимирович',
+						avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
+					},
+					{
+						name: 'Григорий',
+						surname: 'Гришин',
+						middleName: 'Геннадиевич',
+						avatarImg: ''
+					},
+					{
+						name: 'Дмитрий',
+						surname: 'Деревянко',
+						middleName: 'Денисович',
+						avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
+					},
+				]
+			},
 		});
 	</script>
 </body>
