@@ -22,7 +22,7 @@
 		</div>
 		<!-- preloader -->
 		<div id="app" v-cloak>
-			<button v-on:click="show = !show" title="Click here to hide table" type="button">Скрыть таблицу</button>
+			<button v-on:click="showHide" title="Click here to hide table" type="button">Скрыть таблицу</button>
 			<div class="table_wrapper">
 
 				<table v-if="show" summary="people massive">
@@ -40,13 +40,13 @@
 						<td>{{	person.middleName	}}</td>
 						<td>{{	person.surname	}}</td>
 						<td>
-							<img v-bind:src="person.avatarImg || 'Нет Аватара'" height=" 50px">
+							<img v-bind:src="person.avatarImg || 'https://img.icons8.com/ios-filled/50/000000/checked-user-male.png'"
+								height=" 50px">
 						</td>
 					</tr>
 				</table>
 
 			</div>
-
 
 		</div>
 	</div>
@@ -95,6 +95,11 @@
 					},
 				]
 			},
+			methods: {
+				showHide: function () {
+					return this.show = !this.show;
+				}
+			}
 
 		});
 	</script>
