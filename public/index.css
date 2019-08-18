@@ -137,16 +137,15 @@ table td {
 }
 
 button {
-display: flex;
-margin: auto;
-
+	display: flex;
+	margin: auto;
 }
 
 [v-cloak] {
 	display: none;
 }
 
+.body_wrapper {
+	margin-top: 20px;
 
-
-
-
+}
