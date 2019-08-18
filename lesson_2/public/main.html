@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" href="./favicon.ico">
+	<link rel="stylesheet" href="./index.css">
+	<title>Vue.JS-Project by Paranoia</title>
+</head>
+
+<body>
+	<div class="body_wrapper">
+		<!-- preloader -->
+		<div class="preloader" id="page-preloader">
+			<div class="preloader_content">
+				<div class="preloader_first"></div>
+				<div class="preloader_second"></div>
+				<div class="preloader_third"></div>
+			</div>
+		</div>
+		<!-- preloader -->
+				<span class="link_wrapper">
+					<a href="../public/second.html">Перейти на вторую страницу</a>
+				</span>
+		<div id="app" v-cloak>
+			<button v-on:click="showHide" title="Click here to hide table" type="button">Скрыть таблицу</button>
+			<div class="table_wrapper">
+
+				<table v-if="show" summary="people massive">
+
+					<caption>
+						<h1 class="h1">Задание №1 курса по vue.js</h1>
+					</caption>
+					<tr>
+						<td>
+							<h2 class="h2">Всего пользователей : {{people.length}}</h2>
+						</td>
+					</tr>
+					<tr v-for="person of people">
+						<td>{{	person.name	}}</td>
+						<td>{{	person.middleName	}}</td>
+						<td>{{	person.surname	}}</td>
+						<td>
+							<img v-bind:src="person.avatarImg || 'https://img.icons8.com/ios-filled/50/000000/checked-user-male.png'"
+								height=" 50px">
+						</td>
+					</tr>
+				</table>
+
+			</div>
+
+		</div>
+
+	</div>
+	<script src="../src/main.js" defer> </script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data() {
+				return {
+					people: [],
+					show: true,
+
+				}
+			},
+			mounted() {
+				this.people = [{
+						name: 'Алексей',
+						surname: 'Абрашкин',
+						middleName: 'Александрович',
+						avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
+					},
+					{
+						name: 'Борис',
+						surname: 'Гребенщиков',
+						middleName: 'Валерьевич',
+						avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
+					},
+					{
+						name: 'Валерий',
+						surname: 'Волков',
+						middleName: 'Владимирович',
+						avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
+					},
+					{
+						name: 'Григорий',
+						surname: 'Гришин',
+						middleName: 'Геннадиевич',
+						avatarImg: ''
+					},
+					{
+						name: 'Дмитрий',
+						surname: 'Деревянко',
+						middleName: 'Денисович',
+						avatarImg: 'https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png'
+					},
+				]
+			},
+			methods: {
+				showHide: function () {
+					return this.show = !this.show;
+				}
+			}
+
+		});
+	</script>
+</body>
+
+</html>
