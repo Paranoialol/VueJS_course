@@ -22,7 +22,7 @@
 		</div>
 		<!-- preloader -->
 		<div id="app" v-cloak>
-			<button v-on:click="showHide" title="Click here to hide table" type="button">Скрыть таблицу</button>
+			<button v-on:click="showHide" title="Click here to hide table" type="button"><span>{{ButtonText()}}</span></button>
 			<div class="table_wrapper">
 
 				<table v-if="show" summary="people massive">
@@ -96,8 +96,11 @@
 				]
 			},
 			methods: {
-				showHide: function () {
+				showHide() {
 					return this.show = !this.show;
+				},
+				ButtonText(){
+					return this.show ? 'Скрыть' : 'Отобразить'
 				}
 			}
 
