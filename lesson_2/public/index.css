@@ -123,7 +123,6 @@
 	padding: 0;
 }
 
-
 .table_wrapper {
 	width: fit-content;
 	margin: auto;
@@ -154,7 +153,8 @@ button {
 
 
 }
+
 .link_wrapper a:hover {
-		color: blue;
+	color: blue;
 
 }
