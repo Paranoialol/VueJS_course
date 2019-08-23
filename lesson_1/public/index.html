@@ -38,7 +38,7 @@
 					<tr v-for="person of people">
 						<td>{{	person.name	}}</td>
 						<td>{{	person.middleName	}}</td>
-						<td>{{	person.surname	}}</td>
+						<td>{{	person.surname }}</td>
 						<td>
 							<img v-bind:src="person.avatarImg || 'https://img.icons8.com/ios-filled/50/000000/checked-user-male.png'"
 								height=" 50px">
@@ -59,7 +59,7 @@
 				return {
 					people: [],
 					show: true,
-
+					
 				}
 			},
 			mounted() {
